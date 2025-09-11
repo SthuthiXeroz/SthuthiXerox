@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sthuthi Xerox</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Sthuthi Xerox</h1>
+        <p>Address: No 1, 6th Street, Gurusamy Nagar, Mothilal Nehru street, Pulianthope, Chennai-600012</p>
+        <p>Working Hours: 6:30am to 10:30pm, Monday to Saturday</p>
+    </header>
+
+    <section class="services">
+        <h2>Services</h2>
+        <h3>Visit the shop</h3>
+        <ul>
+            <li>Xerox</li>
+            <li>Lamination</li>
+            <li>Binding</li>
+        </ul>
+        <h3>Order Online</h3>
+        <ul>
+            <li><a href="#stationery-form">Stationery</a></li>
+            <li><a href="#printout-form">Printouts</a></li>
+        </ul>
+    </section>
+
+    <section id="stationery-form">
+        <h2>Stationery Order</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+
+    <section id="printout-form">
+        <h2>Printout Order</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeppItFkg13JjWhciYV4ZKnjBqqwAedzAL8FOwB4_VBkOf_Og/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+
+    <section class="payment">
+        <h2>Pay Now</h2>
+        <p>Use UPI ID: <strong>cutesthuthi-4@okaxis</strong></p>
+        <button onclick="payNow()">Pay with UPI</button>
+    </section>
+
+    <footer>
+        <p>Contact: No 1, 6th Street, Gurusamy Nagar, Mothilal Nehru street, Pulianthope, Chennai-600012</p>
+    </footer>
+
+    <script>
+        function payNow() {
+            window.location.href = "upi://pay?pa=cutesthuthi-4@okaxis&pn=SthuthiXerox&tn=Payment+for+order&am=&cu=INR";
+        }
+    </script>
+</body>
+</html>
