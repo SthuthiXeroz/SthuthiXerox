@@ -1,62 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sthuthi Xerox</title>
-    <link rel="stylesheet" href="styles.css" />
+<title>Sthuthi Xerox</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family: Arial;
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+header{
+text-align:center;
+background:#f5f5f5;
+padding:20px;
+border-radius:8px;
+}
+
+section{
+margin-top:30px;
+}
+
+button{
+background:#2a7ae2;
+color:white;
+border:none;
+padding:12px 20px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b57a5;
+}
+
+</style>
+
 </head>
+
 <body>
-    <header>
-        <h1>Sthuthi Xerox</h1>
-        <p>Address: No 1, 6th Street, Gurusamy Nagar, Mothilal Nehru street, Pulianthope, Chennai-600012</p>
-        <p>Working Hours: 6:30am to 10:30pm, Monday to Saturday</p>
-    </header>
 
-    <section class="services">
-        <h2>Services</h2>
-        <h3>Visit the shop</h3>
-        <ul>
-            <li>Xerox</li>
-            <li>Lamination</li>
-            <li>Binding</li>
-        </ul>
-        <h3>Order Online</h3>
-        <ul>
-            <li><a href="#stationery-form">Stationery</a></li>
-            <li><a href="#printout-form">Printouts</a></li>
-        </ul>
-    </section>
+<header>
+<h1>Sthuthi Xerox</h1>
+<p>No 1, 6th Street, Gurusamy Nagar, Pulianthope, Chennai</p>
+<p>Working Hours: 6:30am – 10:30pm</p>
+</header>
 
-    <section id="stationery-form">
-        <h2>Stationery Order</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </section>
+<section>
+<h2>Services</h2>
+<ul>
+<li>Xerox</li>
+<li>Lamination</li>
+<li>Binding</li>
+<li>Printouts</li>
+</ul>
+</section>
 
-    <section id="printout-form">
-        <h2>Printout Order</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeppItFkg13JjWhciYV4ZKnjBqqwAedzAL8FOwB4_VBkOf_Og/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </section>
+<section>
+<h2>Pay with UPI</h2>
+<p>UPI ID: cutesthuthi-4@okaxis</p>
+<button onclick="payNow()">Pay Now</button>
+</section>
 
-    <section class="payment">
-        <h2>Pay Now</h2>
-        <p>Use UPI ID: <strong>cutesthuthi-4@okaxis</strong></p>
-        <button onclick="payNow()">Pay with UPI</button>
-    </section>
+<script>
 
-    <!-- Live Order Table Section -->
-    <section id="live-order-table">
-        <h2>Live Order Table</h2>
-        <iframe
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPy9Mn_5Tl9Cir8nUSRke9id8ROzkofze-BEa6hf-_k3e1ukEwx0zZGKckCtsNbhl_vkhrkySXaucL/pubhtml?widget=true&amp;headers=false"
-            width="100%"
-            height="600"
-            style="border: 1px solid #ccc;">
-        </iframe>
-    </section>
+function payNow(){
+window.location.href="upi://pay?pa=cutesthuthi-4@okaxis&pn=Sthuthi Xerox";
+}
 
-    <footer>
-        <p>Contact: No 1, 6th Street, Gurusamy Nagar, Mothilal Nehru street, Pulianthope, Chennai-600012</p>
-    </footer>
+</script>
 
-    <script>
+</body>
+</html>
