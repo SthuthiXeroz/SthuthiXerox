@@ -2,22 +2,129 @@
 <html>
 <head>
 <title>Sthuthi Xerox</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
 body{
 font-family: Arial;
+margin:0;
+background:#f4f6f9;
+}
+
+.header{
+background:#2c7be5;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+.container{
 max-width:900px;
 margin:auto;
 padding:20px;
 }
 
-header{
-text-align:center;
-background:#f5f5f5;
+.card{
+background:white;
 padding:20px;
+margin-top:20px;
 border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.services li{
+padding:6px 0;
+}
+
+.button{
+display:inline-block;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+color:white;
+margin-top:10px;
+}
+
+.call{background:#28a745;}
+.whatsapp{background:#25D366;}
+.pay{background:#2c7be5;}
+
+.footer{
+text-align:center;
+margin-top:30px;
+color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Sthuthi Xerox</h1>
+<p>No 1, 6th Street, Gurusamy Nagar, Pulianthope, Chennai</p>
+<p>Working Hours: 6:30am – 10:30pm</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>Services</h2>
+<ul class="services">
+<li>Xerox</li>
+<li>Lamination</li>
+<li>Binding</li>
+<li>Printouts</li>
+<li>Scanning</li>
+<li>ID Card Printing</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Contact</h2>
+
+<a class="button call" href="tel:+919000000000">Call Shop</a>
+
+<a class="button whatsapp" 
+href="https://wa.me/919000000000">
+WhatsApp Documents
+</a>
+
+</div>
+
+<div class="card">
+<h2>Pay with UPI</h2>
+
+<p>UPI ID: cutesthuthi-4@okaxis</p>
+
+<a class="button pay" onclick="payNow()">Pay Now</a>
+
+</div>
+
+<div class="card">
+<h2>Location</h2>
+
+<iframe 
+src="https://maps.google.com/maps?q=pulianthope%20chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300"></iframe>
+
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 Sthuthi Xerox</p>
+</div>
+
+<script>
+
+function payNow(){
+window.location.href="upi://pay?pa=cutesthuthi-4@okaxis&pn=Sthuthi%20Xerox";
+}
+
+</script>
+
+</body>
+</html>adius:8px;
 }
 
 section{
@@ -75,4 +182,5 @@ window.location.href="upi://pay?pa=cutesthuthi-4@okaxis&pn=Sthuthi Xerox";
 </script>
 
 </body>
+
 </html>
