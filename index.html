@@ -11,7 +11,7 @@
 body{
 font-family: Arial;
 margin:0;
-background:#f3f3f3;
+background:#f0f0f0;
 scroll-behavior:smooth;
 }
 
@@ -25,13 +25,13 @@ padding:25px 20px;
 }
 
 .logo{
-width:140px;
+width:120px;
 margin-bottom:5px;
 }
 
 header h1{
 margin:5px 0;
-font-size:40px;
+font-size:38px;
 }
 
 /* NAVBAR */
@@ -57,16 +57,16 @@ text-decoration:underline;
 /* SECTIONS */
 
 section{
-padding:50px 20px;
-max-width:1000px;
+padding:40px 20px;
+max-width:1100px;
 margin:auto;
 }
 
 .card{
 background:white;
 padding:35px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 margin-bottom:35px;
 }
 
@@ -74,7 +74,7 @@ margin-bottom:35px;
 
 .button{
 display:inline-block;
-padding:12px 22px;
+padding:14px 24px;
 border-radius:6px;
 color:white;
 text-decoration:none;
@@ -85,8 +85,22 @@ margin-top:10px;
 
 .call{background:#2e7d32;}
 .whatsapp{background:#25D366;}
-.pay{background:#1976d2;}
+.pay{background:#3f51b5;}
 .map{background:#c62828;}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+@media(max-width:800px){
+.grid{
+grid-template-columns:1fr;
+}
+}
 
 /* FOOTER */
 
@@ -121,7 +135,7 @@ Pulianthope, Chennai
 
 <nav>
 
-<a href="#services">Services</a> <a href="#printout">Printout Upload</a> <a href="#stationery">Stationery Order</a> <a href="#contact">Contact</a> <a href="#payment">UPI Payment</a> <a href="#location">Location</a>
+<a href="#services">Services</a> <a href="#printout">Printout Upload</a> <a href="#stationery">Stationery</a> <a href="#contact">Contact</a> <a href="#payment">UPI Payment</a> <a href="#location">Location</a>
 
 </nav>
 
@@ -132,10 +146,12 @@ Pulianthope, Chennai
 <h2>Services</h2>
 
 <ul>
+
 <li>Xerox</li>
 <li>Printouts</li>
 <li>Lamination (Visit Shop)</li>
 <li>Binding (Visit Shop)</li>
+
 </ul>
 
 <p><b>For Lamination and Binding please visit the shop.</b></p>
@@ -144,71 +160,77 @@ Pulianthope, Chennai
 
 </section>
 
-<section id="printout">
+<section class="grid">
 
-<div class="card">
+<div class="card" id="printout">
 
 <h2>Upload Document for Printout</h2>
 
-<iframe
-src="https://docs.google.com/forms/d/e/1FAIpQLSeppItFkg13JjWhciYV4ZKnjBqqwAedzAL8FOwB4_VBkOf_Og/viewform?embedded=true"
-width="100%"
-height="900"
-frameborder="0">
-Loading…
-</iframe>
+<p>You can upload your file here for printing.</p>
+
+<a class="button pay"
+href="https://docs.google.com/forms/d/e/1FAIpQLSeppItFkg13JjWhciYV4ZKnjBqqwAedzAL8FOwB4_VBkOf_Og/viewform"
+target="_blank">
+
+Upload File
+
+</a>
 
 </div>
 
-</section>
-
-<section id="stationery">
-
-<div class="card">
+<div class="card" id="stationery">
 
 <h2>Stationery Order</h2>
 
-<iframe
-src="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform?embedded=true"
-width="100%"
-height="900"
-frameborder="0">
-Loading…
-</iframe>
+<p>Order notebooks, pens, files and other stationery items.</p>
+
+<a class="button pay"
+href="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform"
+target="_blank">
+
+Order Stationery
+
+</a>
 
 </div>
 
 </section>
 
-<section id="contact">
+<section class="grid">
 
-<div class="card">
+<div class="card" id="contact">
 
 <h2>Contact</h2>
 
 <a class="button call" href="tel:9551167168">
-Call Shop
+
+Call Shop - 9551167168
+
 </a>
 
 <a class="button whatsapp"
+
 href="https://wa.me/919551167168">
-Send Documents in WhatsApp </a>
+
+Send Documents in WhatsApp
+
+</a>
 
 </div>
 
-</section>
-
-<section id="payment">
-
-<div class="card">
+<div class="card" id="payment">
 
 <h2>Pay with UPI</h2>
 
 <p>UPI ID: <b>cutesthuthi-4@oksbi</b></p>
 
 <a class="button pay"
+
 href="upi://pay?pa=cutesthuthi-4@oksbi&pn=SthuthiXerox">
-Pay Now </a>
+
+Pay Now
+
+</a>
 
 </div>
 
@@ -221,19 +243,30 @@ Pay Now </a>
 <h2>Shop Location</h2>
 
 <iframe
+
 src="https://maps.google.com/maps?q=37W8%2BQFR%20Mothilal%20Nehru%20St%20Pulianthope%20Chennai&t=&z=17&ie=UTF8&iwloc=&output=embed"
+
 width="100%"
+
 height="400"
+
 style="border:0;"
+
 loading="lazy">
+
 </iframe>
 
 <br><br>
 
 <a class="button map"
+
 href="https://maps.google.com/?q=37W8+QFR+Pulianthope+Chennai"
+
 target="_blank">
-Open in Google Maps </a>
+
+Open in Google Maps
+
+</a>
 
 </div>
 
