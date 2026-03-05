@@ -1,73 +1,81 @@
 <!DOCTYPE html>
-
 <html>
-<head>
 
+<head>
 <title>Sthuthi Xerox</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
+font-family: Arial;
 margin:0;
-background:#f4f6f8;
+background:#f6f6f6;
 }
 
-/* HEADER */
+/* Header */
 
 header{
+background:#7b1e2b;
+color:white;
 text-align:center;
-padding:40px 20px;
-background:white;
-border-bottom:1px solid #e5e7eb;
+padding:30px;
 }
 
 .logo{
-width:160px;
-margin-bottom:15px;
+width:120px;
+margin-bottom:10px;
 }
 
-/* CONTAINER */
+/* Navigation */
 
-.container{
+nav{
+background:#5e1620;
+text-align:center;
+padding:12px;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* Sections */
+
+section{
+padding:40px;
 max-width:900px;
 margin:auto;
-padding:20px;
 }
-
-/* CARDS */
 
 .card{
 background:white;
-padding:25px;
-margin-top:20px;
+padding:30px;
 border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+margin-bottom:30px;
 }
 
-/* SERVICES */
-
-.services li{
-padding:6px 0;
-font-size:17px;
-}
-
-/* BUTTONS */
+/* Buttons */
 
 .button{
 display:inline-block;
-padding:12px 20px;
-border-radius:6px;
-text-decoration:none;
-color:white;
+padding:12px 22px;
 margin-top:10px;
-margin-right:10px;
-font-size:16px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
 .call{
-background:#22c55e;
+background:#2e7d32;
 }
 
 .whatsapp{
@@ -75,18 +83,16 @@ background:#25D366;
 }
 
 .pay{
-background:#2563eb;
+background:#1976d2;
 }
 
 footer{
 text-align:center;
-margin-top:40px;
 padding:20px;
-color:#6b7280;
+background:#eee;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -107,22 +113,57 @@ Pulianthope, Chennai
 
 </header>
 
-<div class="container">
+<nav>
+
+<a href="#services">Services</a>
+<a href="#stationery">Stationery</a>
+<a href="#contact">Contact</a>
+<a href="#payment">Payment</a>
+
+</nav>
+
+<section id="services">
 
 <div class="card">
 
 <h2>Services</h2>
 
-<ul class="services">
+<ul>
 <li>Xerox</li>
-<li>Lamination</li>
-<li>Binding</li>
 <li>Printouts</li>
-<li>Scanning</li>
-<li>ID Card Printing</li>
+<li>Lamination (Visit Shop)</li>
+<li>Binding (Visit Shop)</li>
+</ul>
+
+<p><b>For Lamination and Binding please visit the shop.</b></p>
+
+</div>
+
+</section>
+
+
+<section id="stationery">
+
+<div class="card">
+
+<h2>Stationery</h2>
+
+<p>We sell basic stationery items.</p>
+
+<ul>
+<li>Notebooks</li>
+<li>Pens</li>
+<li>Pencils</li>
+<li>Files</li>
+<li>Staplers</li>
 </ul>
 
 </div>
+
+</section>
+
+
+<section id="contact">
 
 <div class="card">
 
@@ -130,42 +171,40 @@ Pulianthope, Chennai
 
 <a class="button call" href="tel:9551167168">Call Shop</a>
 
-<a class="button whatsapp" href="https://wa.me/919551167168">
-WhatsApp Documents
+<a class="button whatsapp"
+href="https://wa.me/919551167168">
+Send Documents in WhatsApp
 </a>
 
 </div>
+
+</section>
+
+
+<section id="payment">
 
 <div class="card">
 
 <h2>Pay with UPI</h2>
 
-<p><b>UPI ID:</b> cutesthuthi-4@oksbi</p>
+<p>UPI ID: cutesthuthi-4@oksbi</p>
 
 <a class="button pay"
-href="upi://pay?pa=cutesthuthi-4@oksbi&pn=Sthuthi%20Xerox">
-Pay Now </a>
+href="upi://pay?pa=cutesthuthi-4@oksbi&pn=SthuthiXerox">
+Pay Now
+</a>
 
 </div>
 
-<div class="card">
+</section>
 
-<h2>Location</h2>
-
-<iframe
-src="https://maps.google.com/maps?q=pulianthope%20chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%"
-height="300"
-style="border:0;border-radius:8px">
-</iframe>
-
-</div>
-
-</div>
 
 <footer>
+
 © 2026 Sthuthi Xerox
+
 </footer>
 
 </body>
+
 </html>
