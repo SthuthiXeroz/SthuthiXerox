@@ -9,7 +9,7 @@
 <style>
 
 body{
-font-family: Arial;
+font-family:Arial;
 margin:0;
 background:#f0f0f0;
 scroll-behavior:smooth;
@@ -21,16 +21,16 @@ header{
 background:#7d2c34;
 color:white;
 text-align:center;
-padding:25px 20px;
+padding:25px;
 }
 
 .logo{
-width:120px;
+width:140px;
 margin-bottom:5px;
 }
 
 header h1{
-margin:5px 0;
+margin:5px;
 font-size:38px;
 }
 
@@ -70,24 +70,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 margin-bottom:35px;
 }
 
-/* BUTTONS */
-
-.button{
-display:inline-block;
-padding:14px 24px;
-border-radius:6px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-margin-right:10px;
-margin-top:10px;
-}
-
-.call{background:#2e7d32;}
-.whatsapp{background:#25D366;}
-.pay{background:#3f51b5;}
-.map{background:#c62828;}
-
 /* GRID */
 
 .grid{
@@ -102,13 +84,44 @@ grid-template-columns:1fr;
 }
 }
 
+/* BUTTONS */
+
+.button{
+display:inline-block;
+padding:14px 24px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+margin-top:10px;
+}
+
+.call{background:#2e7d32;}
+.whatsapp{background:#25D366;}
+.pay{background:#3f51b5;}
+.map{background:#c62828;}
+
+/* FLOATING WHATSAPP */
+
+.float-whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+font-size:20px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
 /* FOOTER */
 
 footer{
 text-align:center;
 padding:20px;
 background:#eee;
-font-size:14px;
 }
 
 </style>
@@ -135,7 +148,7 @@ Pulianthope, Chennai
 
 <nav>
 
-<a href="#services">Services</a> <a href="#printout">Printout Upload</a> <a href="#stationery">Stationery</a> <a href="#contact">Contact</a> <a href="#payment">UPI Payment</a> <a href="#location">Location</a>
+<a href="#services">Services</a> <a href="#printout">Printout</a> <a href="#stationery">Stationery</a> <a href="#contact">Contact</a> <a href="#payment">UPI</a> <a href="#location">Location</a>
 
 </nav>
 
@@ -146,12 +159,10 @@ Pulianthope, Chennai
 <h2>Services</h2>
 
 <ul>
-
 <li>Xerox</li>
 <li>Printouts</li>
 <li>Lamination (Visit Shop)</li>
 <li>Binding (Visit Shop)</li>
-
 </ul>
 
 <p><b>For Lamination and Binding please visit the shop.</b></p>
@@ -164,17 +175,19 @@ Pulianthope, Chennai
 
 <div class="card" id="printout">
 
-<h2>Upload Document for Printout</h2>
+<h2>Send Document for Printout</h2>
 
-<p>You can upload your file here for printing.</p>
+<p>Select your document and send it via WhatsApp.</p>
 
-<a class="button pay"
-href="https://docs.google.com/forms/d/1vs1n0ReobewGk9shOkSVqHn14I_hY6Q4jGpShOPzNdo/viewform"
-target="_blank">
+<input type="file" id="fileInput">
 
-Upload File
+<br><br>
 
-</a>
+<button class="button whatsapp" onclick="sendToWhatsApp()">
+
+Send via WhatsApp
+
+</button>
 
 </div>
 
@@ -185,7 +198,9 @@ Upload File
 <p>Order notebooks, pens, files and other stationery items.</p>
 
 <a class="button pay"
+
 href="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform"
+
 target="_blank">
 
 Order Stationery
@@ -204,9 +219,11 @@ Order Stationery
 
 <a class="button call" href="tel:9551167168">
 
-Call Shop - 9551167168
+Call Shop
 
 </a>
+
+<br>
 
 <a class="button whatsapp"
 
@@ -277,6 +294,32 @@ Open in Google Maps
 © 2026 Sthuthi Xerox
 
 </footer>
+
+<a class="float-whatsapp"
+
+href="https://wa.me/919551167168"
+
+target="_blank">
+
+💬
+
+</a>
+
+<script>
+
+function sendToWhatsApp(){
+
+var phone="919551167168"
+
+var message="Hello, I want to print a document."
+
+var url="https://wa.me/"+phone+"?text="+encodeURIComponent(message)
+
+window.open(url,'_blank')
+
+}
+
+</script>
 
 </body>
 
