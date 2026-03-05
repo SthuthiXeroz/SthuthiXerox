@@ -2,7 +2,9 @@
 <html>
 
 <head>
+
 <title>Sthuthi Xerox</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -10,35 +12,36 @@
 body{
 font-family: Arial;
 margin:0;
-background:#f6f6f6;
+background:#f5f5f5;
 }
 
-/* Header */
+/* HEADER */
 
 header{
-background:#7b1e2b;
+background:#7d2c34;
 color:white;
 text-align:center;
-padding:30px;
+padding:35px;
 }
 
 .logo{
-width:120px;
+width:90px;
 margin-bottom:10px;
 }
 
-/* Navigation */
+/* NAVIGATION */
 
 nav{
-background:#5e1620;
+background:#5e1f25;
 text-align:center;
-padding:12px;
+padding:14px;
 }
 
 nav a{
 color:white;
-margin:15px;
 text-decoration:none;
+margin:20px;
+font-size:16px;
 font-weight:bold;
 }
 
@@ -46,7 +49,7 @@ nav a:hover{
 text-decoration:underline;
 }
 
-/* Sections */
+/* SECTIONS */
 
 section{
 padding:40px;
@@ -58,20 +61,21 @@ margin:auto;
 background:white;
 padding:30px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
 margin-bottom:30px;
 }
 
-/* Buttons */
+/* BUTTONS */
 
 .button{
 display:inline-block;
 padding:12px 22px;
-margin-top:10px;
 border-radius:6px;
 color:white;
 text-decoration:none;
 font-weight:bold;
+margin-right:10px;
+margin-top:10px;
 }
 
 .call{
@@ -86,6 +90,8 @@ background:#25D366;
 background:#1976d2;
 }
 
+/* FOOTER */
+
 footer{
 text-align:center;
 padding:20px;
@@ -93,6 +99,7 @@ background:#eee;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -113,14 +120,17 @@ Pulianthope, Chennai
 
 </header>
 
+
 <nav>
 
 <a href="#services">Services</a>
 <a href="#stationery">Stationery</a>
 <a href="#contact">Contact</a>
-<a href="#payment">Payment</a>
+<a href="#payment">UPI Payment</a>
 
 </nav>
+
+
 
 <section id="services">
 
@@ -142,13 +152,14 @@ Pulianthope, Chennai
 </section>
 
 
+
 <section id="stationery">
 
 <div class="card">
 
 <h2>Stationery</h2>
 
-<p>We sell basic stationery items.</p>
+<p>Available items:</p>
 
 <ul>
 <li>Notebooks</li>
@@ -163,13 +174,16 @@ Pulianthope, Chennai
 </section>
 
 
+
 <section id="contact">
 
 <div class="card">
 
 <h2>Contact</h2>
 
-<a class="button call" href="tel:9551167168">Call Shop</a>
+<a class="button call" href="tel:9551167168">
+Call Shop
+</a>
 
 <a class="button whatsapp"
 href="https://wa.me/919551167168">
@@ -181,13 +195,14 @@ Send Documents in WhatsApp
 </section>
 
 
+
 <section id="payment">
 
 <div class="card">
 
 <h2>Pay with UPI</h2>
 
-<p>UPI ID: cutesthuthi-4@oksbi</p>
+<p>UPI ID: <b>cutesthuthi-4@oksbi</b></p>
 
 <a class="button pay"
 href="upi://pay?pa=cutesthuthi-4@oksbi&pn=SthuthiXerox">
@@ -199,6 +214,7 @@ Pay Now
 </section>
 
 
+
 <footer>
 
 © 2026 Sthuthi Xerox
@@ -206,5 +222,4 @@ Pay Now
 </footer>
 
 </body>
-
 </html>
