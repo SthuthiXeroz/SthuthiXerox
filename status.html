@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Sthuthi Xerox - Order Status</title>
+</head>
+
+<body style="font-family:Arial;text-align:center;margin-top:100px;">
+
+<h2>Sthuthi Xerox</h2>
+
+<h3>Check Order Status</h3>
+
+<input id="orderId" placeholder="Enter Order ID (SX-01)">
+
+<br><br>
+
+<button onclick="checkStatus()">Check Status</button>
+
+<p id="result"></p>
+
+<script>
+
+function checkStatus(){
+
+const order=document.getElementById("orderId").value;
+
+const api="https://script.google.com/macros/s/AKfycbwDtPT37S9Qbo7PUdk2PkUO0Mtj9XCfsIfl8Ag58RxeQXrXlsxXd2iCqLLMlHaHhkAjog/exec?order="+order;
+
+fetch(api)
+
+.then(response=>response.json())
+
+.then(data=>{
+
+if(data.error){
+
+document.getElementById("result").innerHTML="Order not found";
+
+}else{
+
+document.getElementById("result").innerHTML="Status : "+data.status;
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
