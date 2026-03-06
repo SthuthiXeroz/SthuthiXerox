@@ -1,55 +1,148 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
-<title>Sthuthi Xerox - Order Status</title>
+<title>Sthuthi Xerox - Order Tracking</title>
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f8;
+margin:0;
+padding:0;
+text-align:center;
+}
+
+.container{
+background:white;
+width:400px;
+margin:60px auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1{
+color:#8B2E2E;
+}
+
+.status{
+font-size:22px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.progress{
+display:flex;
+justify-content:space-between;
+margin-top:30px;
+}
+
+.step{
+width:25%;
+}
+
+.circle{
+width:25px;
+height:25px;
+border-radius:50%;
+background:#ddd;
+margin:auto;
+}
+
+.active{
+background:#4CAF50;
+}
+
+.label{
+font-size:12px;
+margin-top:5px;
+}
+
+</style>
 </head>
 
-<body style="font-family:Arial;text-align:center;margin-top:100px;">
+<body>
 
-<h2>Sthuthi Xerox</h2>
+<div class="container">
 
-<h3>Check Order Status</h3>
+<h1>Sthuthi Xerox</h1>
 
-<input id="orderId" placeholder="Enter Order ID (SX-01)">
+<h3>Order Tracking</h3>
 
-<br><br>
+<p>Order ID:</p>
+<h2 id="orderId"></h2>
 
-<button onclick="checkStatus()">Check Status</button>
+<div class="status" id="status"></div>
 
-<p id="result"></p>
+<div class="progress">
+
+<div class="step">
+<div id="s1" class="circle"></div>
+<div class="label">Order Received</div>
+</div>
+
+<div class="step">
+<div id="s2" class="circle"></div>
+<div class="label">Printing</div>
+</div>
+
+<div class="step">
+<div id="s3" class="circle"></div>
+<div class="label">Ready</div>
+</div>
+
+<div class="step">
+<div id="s4" class="circle"></div>
+<div class="label">Completed</div>
+</div>
+
+</div>
+
+</div>
 
 <script>
 
-function checkStatus(){
+const urlParams = new URLSearchParams(window.location.search);
+const orderId = urlParams.get("order");
 
-const order=document.getElementById("orderId").value;
+document.getElementById("orderId").innerText = orderId;
 
-const api="https://script.google.com/macros/s/AKfycbwDtPT37S9Qbo7PUdk2PkUO0Mtj9XCfsIfl8Ag58RxeQXrXlsxXd2iCqLLMlHaHhkAjog/exec?order="+order;
+const API = "https://script.google.com/macros/s/AKfycbwDtPT37S9Qbo7PUdk2PkUO0Mtj9XCfsIfl8Ag58RxeQXrXlsxXd2iCqLLMlHaHhkAjog/exec?order=" + orderId;
 
-fetch(api)
+fetch(API)
+.then(res => res.json())
+.then(data => {
 
-.then(response=>response.json())
+const status = data.status;
 
-.then(data=>{
+document.getElementById("status").innerText = "Status: " + status;
 
-if(data.error){
+if(status=="Order Received"){
+document.getElementById("s1").classList.add("active");
+}
 
-document.getElementById("result").innerHTML="Order not found";
+if(status=="Printing"){
+document.getElementById("s1").classList.add("active");
+document.getElementById("s2").classList.add("active");
+}
 
-}else{
+if(status=="Ready for Pickup"){
+document.getElementById("s1").classList.add("active");
+document.getElementById("s2").classList.add("active");
+document.getElementById("s3").classList.add("active");
+}
 
-document.getElementById("result").innerHTML="Status : "+data.status;
-
+if(status=="Completed"){
+document.getElementById("s1").classList.add("active");
+document.getElementById("s2").classList.add("active");
+document.getElementById("s3").classList.add("active");
+document.getElementById("s4").classList.add("active");
 }
 
 });
 
-}
-
 </script>
 
 </body>
-
 </html>
