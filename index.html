@@ -3,125 +3,60 @@
 <html>
 
 <head>
-<title>Sthuthi Xerox</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sthuthi Xerox - Order Status</title>
 
 <style>
 
 body{
 font-family:Arial;
-margin:0;
-background:#f0f0f0;
-scroll-behavior:smooth;
-}
-
-/* HEADER */
-
-header{
-background:#7d2c34;
-color:white;
 text-align:center;
-padding:25px;
+margin-top:100px;
+background:#f5f5f5;
 }
 
-.logo{
-width:140px;
-margin-bottom:5px;
+.container{
+background:white;
+padding:40px;
+width:350px;
+margin:auto;
+border-radius:10px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.1);
 }
 
-header h1{
-margin:5px;
-font-size:38px;
-}
-
-/* NAVBAR */
-
-nav{
-background:#5e1f25;
-text-align:center;
-padding:14px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 18px;
-font-weight:bold;
+input{
+padding:10px;
+width:80%;
+margin-top:10px;
 font-size:16px;
 }
 
-nav a:hover{
-text-decoration:underline;
-}
-
-/* SECTIONS */
-
-section{
-padding:40px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:35px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-margin-bottom:35px;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-}
-
-@media(max-width:800px){
-.grid{
-grid-template-columns:1fr;
-}
-}
-
-/* BUTTONS */
-
-.button{
-display:inline-block;
-padding:14px 24px;
-border-radius:6px;
+button{
+padding:10px 20px;
+margin-top:15px;
+font-size:16px;
+cursor:pointer;
+background:#4CAF50;
 color:white;
-text-decoration:none;
-font-weight:bold;
-margin-top:10px;
+border:none;
+border-radius:5px;
 }
 
-.call{background:#2e7d32;}
-.whatsapp{background:#25D366;}
-.pay{background:#3f51b5;}
-.map{background:#c62828;}
-
-/* FLOATING WHATSAPP */
-
-.float-whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50px;
+.status{
+margin-top:20px;
 font-size:20px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+font-weight:bold;
 }
 
-/* FOOTER */
+.printing{
+color:orange;
+}
 
-footer{
-text-align:center;
-padding:20px;
-background:#eee;
+.ready{
+color:green;
+}
+
+.completed{
+color:blue;
 }
 
 </style>
@@ -130,194 +65,75 @@ background:#eee;
 
 <body>
 
-<header>
+<div class="container">
 
-<img src="logo.png" class="logo">
+<h2>Sthuthi Xerox</h2>
 
-<h1>Sthuthi Xerox</h1>
+<h3>Check Order Status</h3>
 
-<p>
-No 1, 6th Street<br>
-Gurusamy Nagar<br>
-Pulianthope, Chennai
-</p>
-
-<p><b>Working Hours:</b> 6:30am – 10:30pm</p>
-
-</header>
-
-<nav>
-
-<a href="#services">Services</a> <a href="#printout">Printout</a> <a href="#stationery">Stationery</a> <a href="#contact">Contact</a> <a href="#payment">UPI</a> <a href="#location">Location</a>
-
-</nav>
-
-<section id="services">
-
-<div class="card">
-
-<h2>Services</h2>
-
-<ul>
-<li>Xerox</li>
-<li>Printouts</li>
-<li>Lamination (Visit Shop)</li>
-<li>Binding (Visit Shop)</li>
-</ul>
-
-<p><b>For Lamination and Binding please visit the shop.</b></p>
-
-</div>
-
-</section>
-
-<section class="grid">
-
-<div class="card" id="printout">
-
-<h2>Send Document for Printout</h2>
-
-<p>Select your document and send it via WhatsApp.</p>
-
-<input type="file" id="fileInput">
+<input id="orderId" placeholder="Enter Order ID (SX-01)">
 
 <br><br>
 
-<button class="button whatsapp" onclick="sendToWhatsApp()">
+<button onclick="checkStatus()">Check Status</button>
 
-Send via WhatsApp
-
-</button>
+<p id="result" class="status"></p>
 
 </div>
-
-<div class="card" id="stationery">
-
-<h2>Stationery Order</h2>
-
-<p>Order notebooks, pens, files and other stationery items.</p>
-
-<a class="button pay"
-
-href="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform"
-
-target="_blank">
-
-Order Stationery
-
-</a>
-
-</div>
-
-</section>
-
-<section class="grid">
-
-<div class="card" id="contact">
-
-<h2>Contact</h2>
-
-<a class="button call" href="tel:9551167168">
-
-Call Shop
-
-</a>
-
-<br>
-
-<a class="button whatsapp"
-
-href="https://wa.me/919551167168">
-
-Send Documents in WhatsApp
-
-</a>
-
-</div>
-
-<div class="card" id="payment">
-
-<h2>Pay with UPI</h2>
-
-<p>UPI ID: <b>cutesthuthi-4@oksbi</b></p>
-
-<a class="button pay"
-
-href="upi://pay?pa=cutesthuthi-4@oksbi&pn=SthuthiXerox">
-
-Pay Now
-
-</a>
-
-</div>
-
-</section>
-
-<section id="location">
-
-<div class="card">
-
-<h2>Shop Location</h2>
-
-<iframe
-
-src="https://maps.google.com/maps?q=37W8%2BQFR%20Mothilal%20Nehru%20St%20Pulianthope%20Chennai&t=&z=17&ie=UTF8&iwloc=&output=embed"
-
-width="100%"
-
-height="400"
-
-style="border:0;"
-
-loading="lazy">
-
-</iframe>
-
-<br><br>
-
-<a class="button map"
-
-href="https://maps.google.com/?q=37W8+QFR+Pulianthope+Chennai"
-
-target="_blank">
-
-Open in Google Maps
-
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Sthuthi Xerox
-
-</footer>
-
-<a class="float-whatsapp"
-
-href="https://wa.me/919551167168"
-
-target="_blank">
-
-💬
-
-</a>
 
 <script>
 
-function sendToWhatsApp(){
+const apiURL="https://script.google.com/macros/s/AKfycbwDtPT37S9Qbo7PUdk2PkUO0Mtj9XCfsIfl8Ag58RxeQXrXlsxXd2iCqLLMlHaHhkAjog/exec";
 
-var phone="919551167168"
+function checkStatus(){
 
-var message="Hello, I want to print a document."
+let order=document.getElementById("orderId").value;
 
-var url="https://wa.me/"+phone+"?text="+encodeURIComponent(message)
+fetch(apiURL+"?order="+order)
 
-window.open(url,'_blank')
+.then(res=>res.json())
+
+.then(data=>{
+
+if(data.error){
+
+document.getElementById("result").innerHTML="Order not found";
+
+return;
 
 }
+
+let status=data.status;
+
+let statusClass="";
+
+if(status==="Printing") statusClass="printing";
+if(status==="Ready for Pickup") statusClass="ready";
+if(status==="Completed") statusClass="completed";
+
+document.getElementById("result").innerHTML="Status : <span class='"+statusClass+"'>"+status+"</span>";
+
+});
+
+}
+
+function autoLoad(){
+
+const params=new URLSearchParams(window.location.search);
+
+const order=params.get("order");
+
+if(order){
+
+document.getElementById("orderId").value=order;
+
+checkStatus();
+
+}
+
+}
+
+autoLoad();
 
 </script>
 
