@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Sthuthi Xerox</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 
 body{
@@ -16,7 +26,7 @@ padding:25px;
 
 .logo{
 width:140px;
-margin-bottom:5px;
+margin-bottom:10px;
 }
 
 header h1{
@@ -26,13 +36,13 @@ font-size:38px;
 
 nav{
 background:#222;
-padding:10px;
+padding:12px;
 text-align:center;
 }
 
 nav a{
 color:white;
-margin:10px;
+margin:12px;
 text-decoration:none;
 font-weight:bold;
 }
@@ -48,18 +58,7 @@ background:white;
 padding:25px;
 border-radius:10px;
 margin-bottom:35px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
-}
-
-@media(max-width:800px){
-.grid{
-grid-template-columns:1fr;
-}
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .button{
@@ -76,6 +75,7 @@ margin-top:10px;
 .whatsapp{background:#25D366;}
 .pay{background:#3f51b5;}
 .map{background:#c62828;}
+.track{background:#ff9800;}
 
 .float-whatsapp{
 position:fixed;
@@ -83,9 +83,9 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 18px;
+padding:16px 20px;
 border-radius:50px;
-font-size:20px;
+font-size:22px;
 text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
@@ -98,32 +98,37 @@ background:#eee;
 
 </style>
 
+</head>
+
+<body>
+
 <header>
+
+<img src="logo.png" class="logo">
 
 <h1>Sthuthi Xerox</h1>
 
 <nav>
-<a href="#services">Services</a>
-<a href="#printout">Printout</a>
-<a href="#stationery">Stationery</a>
-<a href="#contact">Contact</a>
-<a href="#payment">UPI</a>
-<a href="#location">Location</a>
+
+<a href="#services">Services</a> <a href="#printout">Printout</a> <a href="#stationery">Stationery</a> <a href="#contact">Contact</a> <a href="#payment">UPI</a> <a href="#location">Location</a>
+
 </nav>
 
 </header>
 
-<div class="section" id="services">
+<div class="section">
 
-<div class="card">
+<div class="card" id="services">
 
 <h2>Services</h2>
 
 <ul>
+
 <li>Xerox</li>
 <li>Printouts</li>
 <li>Lamination (Visit Shop)</li>
 <li>Binding (Visit Shop)</li>
+
 </ul>
 
 <p><b>For Lamination and Binding please visit the shop.</b></p>
@@ -141,8 +146,24 @@ background:#eee;
 <br><br>
 
 <button class="button whatsapp" onclick="sendToWhatsApp()">
-Send via WhatsApp
+
+📄 Send via WhatsApp
+
 </button>
+
+</div>
+
+<div class="card">
+
+<h2>Track Your Order</h2>
+
+<p>Check the status of your print order.</p>
+
+<a class="button track" href="status.html">
+
+📦 Track Order
+
+</a>
 
 </div>
 
@@ -153,10 +174,12 @@ Send via WhatsApp
 <p>Order notebooks, pens, files and other stationery items.</p>
 
 <a class="button pay"
+
 href="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform"
+
 target="_blank">
 
-Order Stationery
+📝 Order Stationery
 
 </a>
 
@@ -167,17 +190,32 @@ Order Stationery
 <h2>Contact</h2>
 
 <a class="button call" href="tel:9551167168">
-Call Shop
+
+📞 Call Shop
+
 </a>
 
 <br><br>
 
 <a class="button whatsapp"
-href="https://wa.me/919551167168">
 
-WhatsApp
+href="https://wa.me/919551167168"
+
+target="_blank">
+
+💬 WhatsApp
 
 </a>
+
+</div>
+
+<div class="card" id="payment">
+
+<h2>UPI Payment</h2>
+
+<p>Pay for your print orders via UPI.</p>
+
+<img src="upi.png" width="200">
 
 </div>
 
@@ -186,10 +224,12 @@ WhatsApp
 <h2>Shop Location</h2>
 
 <a class="button map"
+
 href="https://maps.google.com"
+
 target="_blank">
 
-Open Map
+📍 Open Map
 
 </a>
 
@@ -204,9 +244,14 @@ Open Map
 </footer>
 
 <a class="float-whatsapp"
+
 href="https://wa.me/919551167168"
+
 target="_blank">
-💬 </a>
+
+💬
+
+</a>
 
 <script>
 
@@ -223,3 +268,7 @@ window.open(url,'_blank')
 }
 
 </script>
+
+</body>
+
+</html>
