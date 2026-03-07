@@ -2,73 +2,108 @@
 
 <html>
 <head>
+
 <title>Sthuthi Xerox - Order Tracking</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 
 body{
-font-family: Arial;
+font-family:Arial;
 background:#f4f6f8;
 margin:0;
 padding:0;
 text-align:center;
 }
 
+/* CARD */
+
 .container{
 background:white;
-width:400px;
+max-width:420px;
 margin:60px auto;
 padding:30px;
-border-radius:10px;
+border-radius:12px;
 box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
+/* TITLE */
+
 h1{
 color:#8B2E2E;
+margin-bottom:5px;
 }
 
+h3{
+margin-top:0;
+}
+
+/* STATUS TEXT */
+
 .status{
-font-size:22px;
+font-size:20px;
 font-weight:bold;
 margin-top:15px;
 }
 
+/* PROGRESS BAR */
+
 .progress{
 display:flex;
 justify-content:space-between;
-margin-top:30px;
+margin-top:35px;
 }
+
+/* STEP */
 
 .step{
 width:25%;
 }
 
+/* CIRCLE */
+
 .circle{
-width:25px;
-height:25px;
+width:30px;
+height:30px;
 border-radius:50%;
 background:#ddd;
 margin:auto;
+line-height:30px;
+color:white;
+font-size:16px;
 }
+
+/* ACTIVE STEP */
 
 .active{
 background:#4CAF50;
 }
 
+/* LABEL */
+
 .label{
 font-size:12px;
-margin-top:5px;
+margin-top:6px;
+}
+
+/* ICON STYLE */
+
+.icon{
+font-size:16px;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Sthuthi Xerox</h1>
+<h1>🖨 Sthuthi Xerox</h1>
 
-<h3>Order Tracking</h3>
+<h3>📦 Order Tracking</h3>
 
 <p>Order ID:</p>
 <h2 id="orderId"></h2>
@@ -78,22 +113,22 @@ margin-top:5px;
 <div class="progress">
 
 <div class="step">
-<div id="s1" class="circle"></div>
+<div id="s1" class="circle icon">📥</div>
 <div class="label">Order Received</div>
 </div>
 
 <div class="step">
-<div id="s2" class="circle"></div>
+<div id="s2" class="circle icon">🖨</div>
 <div class="label">Printing</div>
 </div>
 
 <div class="step">
-<div id="s3" class="circle"></div>
+<div id="s3" class="circle icon">📦</div>
 <div class="label">Ready</div>
 </div>
 
 <div class="step">
-<div id="s4" class="circle"></div>
+<div id="s4" class="circle icon">✅</div>
 <div class="label">Completed</div>
 </div>
 
@@ -103,12 +138,23 @@ margin-top:5px;
 
 <script>
 
+/* GET ORDER ID */
+
 const urlParams = new URLSearchParams(window.location.search);
-const orderId = urlParams.get("order");
+
+let orderId = urlParams.get("order");
+
+if(!orderId){
+orderId = urlParams.get("id");
+}
 
 document.getElementById("orderId").innerText = orderId;
 
+/* GOOGLE SCRIPT API */
+
 const API = "https://script.google.com/macros/s/AKfycbwDtPT37S9Qbo7PUdk2PkUO0Mtj9XCfsIfl8Ag58RxeQXrXlsxXd2iCqLLMlHaHhkAjog/exec?order=" + orderId;
+
+/* FETCH STATUS */
 
 fetch(API)
 .then(res => res.json())
@@ -117,6 +163,8 @@ fetch(API)
 const status = data.status;
 
 document.getElementById("status").innerText = "Status: " + status;
+
+/* UPDATE PROGRESS */
 
 if(status=="Order Received"){
 document.getElementById("s1").classList.add("active");
@@ -140,6 +188,9 @@ document.getElementById("s3").classList.add("active");
 document.getElementById("s4").classList.add("active");
 }
 
+})
+.catch(err=>{
+document.getElementById("status").innerText="Order not found";
 });
 
 </script>
