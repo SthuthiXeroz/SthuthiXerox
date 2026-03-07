@@ -4,7 +4,7 @@
 
 <head>
 
-<title>Sthuthi Xerox</title>
+<title>STHUTHI XEROX</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
 body{
 font-family: Arial;
 margin:0;
-background:#f0f0f0;
+background:#f4f4f4;
 scroll-behavior:smooth;
 }
 
@@ -32,19 +32,30 @@ margin-bottom:10px;
 header h1{
 margin:5px;
 font-size:38px;
+letter-spacing:2px;
 }
 
 nav{
-background:#222;
-padding:12px;
 text-align:center;
+padding:15px;
+background:#f4f4f4;
 }
 
 nav a{
-color:white;
-margin:12px;
+display:inline-block;
+background:white;
+padding:10px 16px;
+margin:6px;
+border-radius:6px;
 text-decoration:none;
+color:#333;
 font-weight:bold;
+box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+nav a:hover{
+background:#7d2c34;
+color:white;
 }
 
 .section{
@@ -106,15 +117,15 @@ background:#eee;
 
 <img src="logo.png" class="logo">
 
-<h1>Sthuthi Xerox</h1>
+<h1>STHUTHI XEROX</h1>
+
+</header>
 
 <nav>
 
 <a href="#services">Services</a> <a href="#printout">Printout</a> <a href="#stationery">Stationery</a> <a href="#contact">Contact</a> <a href="#payment">UPI</a> <a href="#location">Location</a>
 
 </nav>
-
-</header>
 
 <div class="section">
 
@@ -123,12 +134,10 @@ background:#eee;
 <h2>Services</h2>
 
 <ul>
-
 <li>Xerox</li>
 <li>Printouts</li>
 <li>Lamination (Visit Shop)</li>
 <li>Binding (Visit Shop)</li>
-
 </ul>
 
 <p><b>For Lamination and Binding please visit the shop.</b></p>
@@ -146,9 +155,7 @@ background:#eee;
 <br><br>
 
 <button class="button whatsapp" onclick="sendToWhatsApp()">
-
 📄 Send via WhatsApp
-
 </button>
 
 </div>
@@ -160,9 +167,7 @@ background:#eee;
 <p>Check the status of your print order.</p>
 
 <a class="button track" href="status.html">
-
 📦 Track Order
-
 </a>
 
 </div>
@@ -174,14 +179,9 @@ background:#eee;
 <p>Order notebooks, pens, files and other stationery items.</p>
 
 <a class="button pay"
-
 href="https://docs.google.com/forms/d/e/1FAIpQLSfyTLJKtfRKWBt3dyxUhHDXi7-eY9Q4hmikVrHWdz6XSWZ21g/viewform"
-
 target="_blank">
-
-📝 Order Stationery
-
-</a>
+📝 Order Stationery </a>
 
 </div>
 
@@ -190,22 +190,15 @@ target="_blank">
 <h2>Contact</h2>
 
 <a class="button call" href="tel:9551167168">
-
 📞 Call Shop
-
 </a>
 
 <br><br>
 
 <a class="button whatsapp"
-
 href="https://wa.me/919551167168"
-
 target="_blank">
-
-💬 WhatsApp
-
-</a>
+💬 WhatsApp </a>
 
 </div>
 
@@ -213,9 +206,11 @@ target="_blank">
 
 <h2>UPI Payment</h2>
 
-<p>Pay for your print orders via UPI.</p>
+<p>Click the button below to pay using GPay, PhonePe, Paytm, or any UPI app.</p>
 
-<img src="upi.png" width="200">
+<a class="button pay"
+href="upi://pay?pa=cutesthuthi-4@oksbi&pn=STHUTHI%20XEROX&cu=INR">
+💰 Pay via UPI </a>
 
 </div>
 
@@ -224,14 +219,9 @@ target="_blank">
 <h2>Shop Location</h2>
 
 <a class="button map"
-
 href="https://maps.google.com"
-
 target="_blank">
-
-📍 Open Map
-
-</a>
+📍 Open Map </a>
 
 </div>
 
@@ -239,19 +229,14 @@ target="_blank">
 
 <footer>
 
-© Sthuthi Xerox
+© STHUTHI XEROX
 
 </footer>
 
 <a class="float-whatsapp"
-
 href="https://wa.me/919551167168"
-
 target="_blank">
-
-💬
-
-</a>
+💬 </a>
 
 <script>
 
